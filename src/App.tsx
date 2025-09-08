@@ -23,14 +23,22 @@ function App() {
           >
             <button
               className="countBtn countLibBtn"
-              onClick={() => setNumberOfLiberals((prev) => prev - 1)}
+              onClick={() => {
+                if (0 < numberOfLiberals) {
+                  setNumberOfLiberals((prev) => prev - 1);
+                }
+              }}
             >
               -
             </button>
             <span>{numberOfLiberals}</span>
             <button
               className="countBtn countLibBtn"
-              onClick={() => setNumberOfLiberals((prev) => prev + 1)}
+              onClick={() => {
+                if (numberOfLiberals < 6) {
+                  setNumberOfLiberals((prev) => prev + 1);
+                }
+              }}
             >
               +
             </button>
@@ -48,14 +56,22 @@ function App() {
           >
             <button
               className="countBtn countFasBtn"
-              onClick={() => setNumberOfFascists((prev) => prev - 1)}
+              onClick={() => {
+                if (0 < numberOfFascists) {
+                  setNumberOfFascists((prev) => prev - 1);
+                }
+              }}
             >
               -
             </button>
             <span>{numberOfFascists}</span>
             <button
               className="countBtn countFasBtn"
-              onClick={() => setNumberOfFascists((prev) => prev + 1)}
+              onClick={() => {
+                if (numberOfFascists < 11) {
+                  setNumberOfFascists((prev) => prev + 1);
+                }
+              }}
             >
               +
             </button>
