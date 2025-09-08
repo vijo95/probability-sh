@@ -25,6 +25,11 @@ const CN = ({ n, k }: CombinatorialNumber) => {
 };
 
 const probability = ({ fas, lib, totalFas, totalLib }: Policies) => {
+  if (fas + lib < 3) return 0;
+  if (totalFas + totalLib < 3) return 0;
+  if (fas > totalFas) return 0;
+  if (lib > totalLib) return 0;
+
   return Number(
     (
       ((CN({ n: totalFas, k: fas }) * CN({ n: totalLib, k: lib })) /
