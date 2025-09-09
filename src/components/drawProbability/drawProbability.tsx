@@ -40,7 +40,6 @@ const probability = ({ fas, lib, totalFas, totalLib }: Policies) => {
 };
 
 export const DrawProbability = ({ fas, lib, totalFas, totalLib }: Policies) => {
-  console.log(fas, lib);
   return (
     <div className="drawProbability">
       <div
@@ -51,13 +50,13 @@ export const DrawProbability = ({ fas, lib, totalFas, totalLib }: Policies) => {
           gap: "0.5rem",
         }}
       >
-        {Array.isArray(Array(fas)) &&
-          [...Array(fas)].map((_, index) => (
-            <img key={`fas-${index}`} src={skull} />
-          ))}
         {Array.isArray(Array(lib)) &&
           [...Array(lib)].map((_, index) => (
             <img key={`lib-${index}`} src={dove} />
+          ))}
+        {Array.isArray(Array(fas)) &&
+          [...Array(fas)].map((_, index) => (
+            <img key={`fas-${index}`} src={skull} />
           ))}
       </div>
       <span>{probability({ fas, lib, totalFas, totalLib })}%</span>

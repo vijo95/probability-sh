@@ -49,3 +49,17 @@
   background-color: rgba(51, 138, 198, 0.25);
   border: 2px solid #338ac6;
 }
+
+.onePolicyContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+  gap: 2.5rem;
+
+  img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
