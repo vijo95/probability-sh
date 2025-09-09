@@ -16,6 +16,7 @@ export const FasPolicy = () => {
     <div className="policy fasPolicy">
       <img src={skull} alt="skull" />
       <span>Fascists</span>
+      <div className="tegobi" />
     </div>
   );
 };
