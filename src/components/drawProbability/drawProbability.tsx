@@ -40,42 +40,25 @@ const probability = ({ fas, lib, totalFas, totalLib }: Policies) => {
 };
 
 export const DrawProbability = ({ fas, lib, totalFas, totalLib }: Policies) => {
+  console.log(fas, lib);
   return (
     <div className="drawProbability">
       <div
         style={{
           display: "flex",
           alignItems: "center",
-          gap: "1rem",
           justifyContent: "center",
+          gap: "0.5rem",
         }}
       >
-        {0 < lib ? (
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "0.25rem",
-            }}
-          >
-            <span>{lib}</span>
-            <img src={dove} />
-          </div>
-        ) : null}
-        {0 < fas ? (
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "0.25rem",
-            }}
-          >
-            <span>{fas}</span>
-            <img src={skull} />
-          </div>
-        ) : null}
+        {Array.isArray(Array(fas)) &&
+          [...Array(fas)].map((_, index) => (
+            <img key={`fas-${index}`} src={skull} />
+          ))}
+        {Array.isArray(Array(lib)) &&
+          [...Array(lib)].map((_, index) => (
+            <img key={`lib-${index}`} src={dove} />
+          ))}
       </div>
       <span>{probability({ fas, lib, totalFas, totalLib })}%</span>
     </div>

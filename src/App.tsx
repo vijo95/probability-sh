@@ -9,7 +9,15 @@ function App() {
 
   return (
     <div className="root">
-      <h1 style={{ textAlign: "center", fontStyle: "italic" }}>Trust Nobody</h1>
+      <h1
+        style={{
+          textAlign: "center",
+          fontStyle: "italic",
+          color: "whitesmoke",
+        }}
+      >
+        Trust Nobody
+      </h1>
       <div className="count">
         <div className="policyCount">
           <LibPolicy />
