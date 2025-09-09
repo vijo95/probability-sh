@@ -2,8 +2,6 @@ import { useState } from "react";
 import "./App.css";
 import { FasPolicy, LibPolicy } from "./components/policy/policy";
 import { DrawProbability } from "./components/drawProbability/drawProbability";
-import skull from "./assets/icons8-skull-100.png";
-import dove from "./assets/icons8-dove-100.png";
 
 function App() {
   const [numberOfFascists, setNumberOfFascists] = useState(11);
