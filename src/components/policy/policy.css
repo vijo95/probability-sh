@@ -1,3 +1,5 @@
+/* POLICY ITEM */
+
 .policy {
   width: 100px;
   aspect-ratio: 12/16;
@@ -44,4 +46,56 @@
   position: absolute;
   z-index: 100;
   top: 57px;
+}
+
+/* POLICY DASHBOARD */
+
+.count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+  gap: 2.5rem;
+}
+
+.policyCount {
+  font-size: 2rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: whitesmoke;
+}
+
+.policyCounter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.countBtn {
+  border-radius: 50%;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  border: none;
+  color: whitesmoke;
+}
+
+.countFasBtn {
+  background-color: rgba(172, 20, 20, 0.25);
+  border: 2px solid #ac1414;
+}
+
+.countLibBtn {
+  background-color: rgba(51, 138, 198, 0.25);
+  border: 2px solid #338ac6;
 }
