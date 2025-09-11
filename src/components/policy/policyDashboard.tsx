@@ -2,7 +2,23 @@ import type { PolicyDashboardProps } from "../../App";
 import { FasPolicy, LibPolicy } from "./policy";
 import "./policy.css";
 
-export const PolicyCounter = ({
+const PolicyCounterBtn = ({
+  symbol,
+  className,
+  action,
+}: {
+  symbol: string;
+  className: string;
+  action: () => void;
+}) => {
+  return (
+    <button className={`countBtn ${className}`} onClick={() => action()}>
+      {symbol}
+    </button>
+  );
+};
+
+const PolicyCounter = ({
   numberOfParty,
   setNumerOfParty,
   maxLimit,
@@ -15,27 +31,25 @@ export const PolicyCounter = ({
 }) => {
   return (
     <div className="policyCounter">
-      <button
-        className={`countBtn ${className}`}
-        onClick={() => {
+      <PolicyCounterBtn
+        symbol="-"
+        className={className}
+        action={() => {
           if (0 < numberOfParty) {
             setNumerOfParty((prev) => prev - 1);
           }
         }}
-      >
-        -
-      </button>
+      />
       <span>{numberOfParty}</span>
-      <button
-        className={`countBtn ${className}`}
-        onClick={() => {
+      <PolicyCounterBtn
+        symbol="-"
+        className={className}
+        action={() => {
           if (numberOfParty < maxLimit) {
             setNumerOfParty((prev) => prev + 1);
           }
         }}
-      >
-        +
-      </button>
+      />
     </div>
   );
 };
