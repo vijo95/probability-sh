@@ -42,7 +42,7 @@ const PolicyCounter = ({
       />
       <span>{numberOfParty}</span>
       <PolicyCounterBtn
-        symbol="-"
+        symbol="+"
         className={className}
         action={() => {
           if (numberOfParty < maxLimit) {
