@@ -6,15 +6,17 @@ export const PolicyCounter = ({
   numberOfParty,
   setNumerOfParty,
   maxLimit,
+  className,
 }: {
   numberOfParty: number;
   setNumerOfParty: React.Dispatch<React.SetStateAction<number>>;
   maxLimit: number;
+  className: "countFasBtn" | "countLibBtn";
 }) => {
   return (
     <div className="policyCounter">
       <button
-        className="countBtn countLibBtn"
+        className={`countBtn ${className}`}
         onClick={() => {
           if (0 < numberOfParty) {
             setNumerOfParty((prev) => prev - 1);
@@ -25,7 +27,7 @@ export const PolicyCounter = ({
       </button>
       <span>{numberOfParty}</span>
       <button
-        className="countBtn countLibBtn"
+        className={`countBtn ${className}`}
         onClick={() => {
           if (numberOfParty < maxLimit) {
             setNumerOfParty((prev) => prev + 1);
@@ -52,6 +54,7 @@ export const PolicyDashboard = ({
           numberOfParty={numberOfLiberals}
           setNumerOfParty={setNumberOfLiberals}
           maxLimit={6}
+          className="countLibBtn"
         />
       </div>
       <div className="policyCount">
@@ -60,6 +63,7 @@ export const PolicyDashboard = ({
           numberOfParty={numberOfFascists}
           setNumerOfParty={setNumberOfFascists}
           maxLimit={11}
+          className="countFasBtn"
         />
       </div>
     </div>
